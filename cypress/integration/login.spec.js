@@ -4,7 +4,7 @@ describe ('Login feature', ()=>{
     it('should accept the admin user/password', ()=> {
         cy.visit('https://automationintesting.online/#/admin');
 
-        cy.fixture('login-details.json').then((data) => {
+        cy.fixture('login-details').then((data) => {
             const {username, password} = data.validCredentials;
             cy.get('[data-testid=username]').type(username);
             cy.get('[data-testid=password]').type(password);
